@@ -20,16 +20,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( is_admin()) {
 
     // include dependencies
-    require_once plugin_dir_path( __FILE__ ) .     'admin/admin-menu.php';
-    require_once plugin_dir_path( __FILE__ ) .     'admin/settings-page.php';
-    require_once plugin_dir_path( __FILE__ ) .     'admin/settings-register.php';
-    require_once plugin_dir_path( __FILE__ ) .     'admin/settings-callbacks.php';
-    require_once plugin_dir_path( __FILE__ ) .     'admin/settings-validation.php';
+    require_once plugin_dir_path( __FILE__ ) . 'admin/admin-menu.php';
+    require_once plugin_dir_path( __FILE__ ) . 'admin/settings-page.php';
+    require_once plugin_dir_path( __FILE__ ) . 'admin/settings-register.php';
+    require_once plugin_dir_path( __FILE__ ) . 'admin/settings-callbacks.php';
+    require_once plugin_dir_path( __FILE__ ) . 'admin/settings-validation.php';
 
 }
 
 // include dependencies admin and public
-require_once plugin_dir_path( __FILE__ ) .     'includes/core-functions.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/core-functions.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/api-call.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/display.php';
 
 // default plugin options
 function weather_buddy_options_default() {
