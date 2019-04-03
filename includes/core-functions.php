@@ -5,19 +5,11 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-
-// custom login logo title
-function myplugin_custom_login_title( $title ) {
-
-	$options = get_option( 'myplugin_options', myplugin_options_default() );
-
-	if ( isset( $options['custom_title'] ) && ! empty( $options['custom_title'] ) ) {
-
-		$title = esc_attr( $options['custom_title'] );
-
-	}
-
-	return $title;
-
+// Register the shortcode
+function weather_buddy_shortcode() {
+    $option = get_option( 'weather_buddy_options', weather_buddy_options_default());
+    //$wb_test = "We're in here";
+    print_r($option);
+    return $wb_test;
 }
-add_filter( 'login_headertitle', 'myplugin_custom_login_title' );
+add_shortcode('weather_buddy', 'weather_buddy_shortcode');

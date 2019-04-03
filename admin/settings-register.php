@@ -5,6 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+
 // register plugin settings
 function weather_buddy_register_settings() {
 
