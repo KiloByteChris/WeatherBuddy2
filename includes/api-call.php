@@ -23,13 +23,14 @@ class ApiCall{
     This function builds a urls from the necassary paramaters needed to make the api call.
     Once the url is bild, the call_api() method is used to make the call.
     */
-    public function request() {
-        // Use the open weather api url and my api key to build a new url
-        $url = 'http://api.openweathermap.org/data/2.5/forecast?zip=98663,us';
+    public function request($options) {
+        // Use the open weather api url and the api key to build a new url
+        // $url = 'http://api.openweathermap.org/data/2.5/forecast?zip=98663,us';
+        $url = 'http://api.openweathermap.org/data/2.5/forecast?q=';
+        $url .= $options['weather_buddy_location'];
         $apiParam = '&appid=';
-        $apiKey = '0d78f016d75e6ca170516578566505bd';
         $url .= $apiParam;
-        $url .= $apiKey;
+        $url .= $options['weather_buddy_api_key'];
         // Use the url to request data from the weather api
         $weatherData = $this->call_api($url);
         // The api returns json. Parsse the json string into a php object

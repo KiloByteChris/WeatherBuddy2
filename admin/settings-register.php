@@ -31,5 +31,14 @@ function weather_buddy_register_settings() {
         [ 'id' => 'weather_buddy_location', 'label' => 'Location of the weather forecast' ]
     );
 
+    add_settings_field(
+        'weather_buddy_api_key',
+        'API Key',
+        'weather_buddy_callback_field_text',
+        'weather_buddy',
+        'weather_buddy_section_admin',
+        [ 'id' => 'weather_buddy_api_key', 'label' => 'Weather Underground API Key' ]
+    );
+
 }
 add_action( 'admin_init', 'weather_buddy_register_settings' );

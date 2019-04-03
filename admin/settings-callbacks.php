@@ -8,7 +8,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 // callback: admin section
 function weather_buddy_callback_section_admin() {
 
-	echo '<p>These settings enable you to customize the WP Admin Area.</p>';
+	echo '<p>Welcome to Weather Buddy!</p>';
+	echo '<p>This plugin is used to display a simple weather forecast.</p>';
 
 }
 
