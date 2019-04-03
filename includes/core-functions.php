@@ -7,19 +7,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Register the shortcode
 function weather_buddy_plugin() {
-    $option = get_option( 'weather_buddy_options', weather_buddy_options_default());
-    print_r($option);
 
+    $options = get_option( 'weather_buddy_options', weather_buddy_options_default());
     // Begin the main container div
     $wbDiv = "<div class='wb-container'>";
     // Initialize new instances of the classes that are going to be used.
     $call = new ApiCall;
     $display_weather = new Display;
     // API call
-    $weatherData = $call->request();
-    // echo "<pre>";
-    // print_r($weatherData);
-    // echo "</pre>";
+    $weatherData = $call->request($options);
     //Process API data into a display string
     $displayString = $display_weather->init_display_weather($weatherData);
     $wbDiv .= $displayString;
